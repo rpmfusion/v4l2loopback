@@ -1,7 +1,7 @@
 Name:           v4l2loopback
 Summary:        Utils for V4L2 loopback devices
 Version:        0.12.5
-Release:        2%{?dist}
+Release:        3%{?dist}
 License:        GPLv2+
 
 URL:            https://github.com/umlaeute/v4l2loopback
@@ -15,7 +15,7 @@ BuildRequires:  help2man
 BuildRequires:  systemd-rpm-macros
 # For kmod package
 Provides:       %{name}-kmod-common = %{version}-%{release}
-Requires:       %{name}-kmod = %{version}-%{release}
+Requires:       %{name}-kmod >= %{version}
 # For compatibility with older name
 Provides:       %{name}-utils = %{version}-%{release}
 Obsoletes:      %{name}-utils < 0.12.5-2
@@ -54,6 +54,9 @@ install -D -m 0644 %{SOURCE2} %{buildroot}%{_modulesloaddir}/v4l2loopback.conf
 
 
 %changelog
+* Sat Feb 27 2021 Nicolas Chauvet <kwizart@gmail.com> - 0.12.5-3
+- Fix v4l2loopback-kmod deps
+
 * Mon Feb 15 2021 Nicolas Chauvet <kwizart@gmail.com> - 0.12.5-2
 - Rename to v4l2loopback
 
