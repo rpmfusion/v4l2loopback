@@ -1,7 +1,7 @@
 Name:           v4l2loopback
 Summary:        Utils for V4L2 loopback devices
-Version:        0.12.5
-Release:        5%{?dist}
+Version:        0.12.7
+Release:        1%{?dist}
 License:        GPLv2+
 
 URL:            https://github.com/umlaeute/v4l2loopback
@@ -54,6 +54,9 @@ install -D -m 0644 %{SOURCE2} %{buildroot}%{_modulesloaddir}/v4l2loopback.conf
 
 
 %changelog
+* Fri Aug 05 2022 Leigh Scott <leigh123linux@gmail.com> - 0.12.7-1
+- Update to 0.12.7
+
 * Wed Feb 09 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 0.12.5-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
 
