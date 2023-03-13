@@ -1,11 +1,15 @@
+%global commit a66968647843f57448b59cf98d0318f1e98e072c
+%global commitdate 20230220
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
+
 Name:           v4l2loopback
 Summary:        Utils for V4L2 loopback devices
-Version:        0.12.7
-Release:        2%{?dist}
+Version:        0.12.7^%{commitdate}g%{shortcommit}
+Release:        1%{?dist}
 License:        GPLv2+
 
 URL:            https://github.com/umlaeute/v4l2loopback
-Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
+Source0:        %{url}/archive/%{commit}/%{name}-%{shortcommit}.tar.gz
 Source1:        modprobe-d-98-v4l2loopback.conf
 Source2:        modules-load-d-v4l2loopback.conf
 
@@ -20,7 +24,7 @@ Requires:       %{name}-kmod >= %{version}
 Provides:       %{name}-utils = %{version}-%{release}
 Obsoletes:      %{name}-utils < 0.12.5-2
 
-BuildArch:      noarch
+# BuildArch:      noarch
 
 %description
 This allows you to create "virtual video devices". Normal (v4l2)
@@ -32,7 +36,7 @@ This package contains the utilties for %{name}.
 
 
 %prep
-%autosetup -p1
+%autosetup -p1 -n %{name}-%{commit}
 
 %build
 # Nothing to build
@@ -54,6 +58,9 @@ install -D -m 0644 %{SOURCE2} %{buildroot}%{_modulesloaddir}/v4l2loopback.conf
 
 
 %changelog
+* Mon Mar 06 2023 Kate Hsuan <hpa@redhat.com> - 0.12.7-20230220ga669686-1
+- Updated to commit a66968647843f57448b59cf98d0318f1e98e072c
+
 * Mon Aug 08 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 0.12.7-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild and ffmpeg
   5.1
