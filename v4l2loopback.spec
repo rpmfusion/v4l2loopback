@@ -1,5 +1,5 @@
-%global commit a66968647843f57448b59cf98d0318f1e98e072c
-%global commitdate 20230220
+%global commit 2c9b67072b15d903fecde67c7f269abeafee4c25
+%global commitdate 20230503
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           v4l2loopback
@@ -56,6 +56,9 @@ install -D -m 0644 %{SOURCE2} %{buildroot}%{_modulesloaddir}/v4l2loopback.conf
 
 
 %changelog
+* Tue May 09 2023 Kate Hsuan <hpa@redhat.com> - 0.12.7-20230503g2c9b670-1
+- Updated to commit 2c9b67072b15d903fecde67c7f269abeafee4c25
+
 * Mon Mar 06 2023 Kate Hsuan <hpa@redhat.com> - 0.12.7-20230220ga669686-1
 - Updated to commit a66968647843f57448b59cf98d0318f1e98e072c
 
