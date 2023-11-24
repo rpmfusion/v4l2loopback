@@ -37,6 +37,7 @@ This package contains the utilties for %{name}.
 %autosetup -p1 -n %{name}-%{commit}
 
 %build
+%{set_build_flags}
 %make_build utils
 
 
