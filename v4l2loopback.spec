@@ -37,7 +37,8 @@ This package contains the utilties for %{name}.
 %autosetup -p1 -n %{name}-%{commit}
 
 %build
-# Nothing to build
+%make_build
+
 
 %install
 make V=1 %{?_smp_mflags} install-utils DESTDIR=%{buildroot} PREFIX=%{_prefix}
