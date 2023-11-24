@@ -37,7 +37,7 @@ This package contains the utilties for %{name}.
 %autosetup -p1 -n %{name}-%{commit}
 
 %build
-%make_build
+%make_build utils
 
 
 %install
