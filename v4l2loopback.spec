@@ -4,12 +4,12 @@
 
 Name:           v4l2loopback
 Summary:        Utils for V4L2 loopback devices
-Version:        0.12.7^%{commitdate}g%{shortcommit}
-Release:        3%{?dist}
+Version:        0.13.1
+Release:        1%{?dist}
 License:        GPLv2+
 
 URL:            https://github.com/umlaeute/v4l2loopback
-Source0:        %{url}/archive/%{commit}/%{name}-%{shortcommit}.tar.gz
+Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 Source1:        modprobe-d-98-v4l2loopback.conf
 Source2:        modules-load-d-v4l2loopback.conf
 
@@ -34,7 +34,7 @@ This package contains the utilties for %{name}.
 
 
 %prep
-%autosetup -p1 -n %{name}-%{commit}
+%autosetup -p1 -n %{name}-%{version}
 
 %build
 %{set_build_flags}
@@ -58,6 +58,9 @@ install -D -m 0644 %{SOURCE2} %{buildroot}%{_modulesloaddir}/v4l2loopback.conf
 
 
 %changelog
+* Thu Mar 21 2024 Leigh Scott <leigh123linux@gmail.com> - 0.13.1-1
+- Update to 0.13.1
+
 * Sun Feb 04 2024 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 0.12.7^20230503g2c9b670-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild
 
