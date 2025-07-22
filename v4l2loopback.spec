@@ -4,9 +4,9 @@
 
 Name:           v4l2loopback
 Summary:        Utils for V4L2 loopback devices
-Version:        0.15.0
+Version:        0.15.1
 Release:        %autorelease
-License:        GPLv2+
+License:        GPL-2.0-or-later
 
 URL:            https://github.com/umlaeute/v4l2loopback
 Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
