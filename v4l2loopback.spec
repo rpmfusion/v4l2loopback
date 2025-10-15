@@ -4,7 +4,7 @@
 
 Name:           v4l2loopback
 Summary:        Utils for V4L2 loopback devices
-Version:        0.15.1
+Version:        0.15.2
 Release:        %autorelease
 License:        GPL-2.0-or-later
 
